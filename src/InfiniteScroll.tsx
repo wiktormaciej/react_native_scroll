@@ -19,19 +19,19 @@ const styles = StyleSheet.create({
     },
     column: {
         flexDirection: "column",
-        justifyContent: "flex-start",
-        flex: 1
+        justifyContent: "flex-start"
     },
     image: {
         flex: 1,
         maxWidth: 100
     },
     line: {
-        marginBottom: 1
+        marginBottom: 1,
+        marginLeft: 5,
     },
     errorText: {
         textAlign: "center",
-        backgroundColor: "magenta",
+        backgroundColor: "#DFF2BF",
         alignSelf: "stretch"
     }
 }
@@ -91,14 +91,12 @@ const InfiniteScroll = (props: any) => {
     const _renderRecord = (item: Record) => {
         return (<View style={styles.record}>
             <Image style={styles.image} source={{ uri: item.avatar }} />
-            <View style={styles.column}>
-                <Text style={styles.line}>First name:</Text>
-                <Text style={styles.line}>Last name:</Text>
+            <View style={[styles.column, { flex: 1 }]}>
+                <Text style={styles.line}>Name:</Text>
                 <Text style={styles.line}>E-mail:</Text>
             </View>
-            <View style={styles.column}>
-                <Text style={styles.line}>{item.first_name}</Text>
-                <Text style={styles.line}>{item.last_name}</Text>
+            <View style={[styles.column, { flex: 2 }]}>
+                <Text style={styles.line}>{item.first_name} {item.last_name}</Text>
                 <Text style={styles.line}>{item.email}</Text>
             </View>
         </View >)
