@@ -1,4 +1,5 @@
 {
   "name": "react_native_scroll",
-  "displayName": "react_native_scroll"
+  "displayName": "react_native_scroll",
+  "fetchAPI": "https://reqres.in/api/users"
 }
